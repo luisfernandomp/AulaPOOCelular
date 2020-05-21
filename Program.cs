@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace primeiroProjetoPOO
 {
@@ -6,7 +10,47 @@ namespace primeiroProjetoPOO
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            bool teste = true;
+            int op;
+            string msg;
+            Celular c = new Celular();
+            c.modelo = "Samsung Galaxy S10";
+            c.cor = "Preto";
+            Console.WriteLine("_______________");
+            Console.WriteLine(c.cor);
+            Console.WriteLine(c.tamanho);
+            Console.WriteLine(c.modelo);
+            Console.WriteLine("_______________");
+            while(teste == true){
+                Console.WriteLine("--------- MENU");
+                Console.WriteLine("0 - Ligar o Celular");
+                Console.WriteLine("1 - Desligar o Celular");
+                Console.WriteLine("2 - Enviar mensagem");
+                Console.WriteLine("3 - Realizar ligação");
+                Console.WriteLine("4 - Sair");
+                op = Convert.ToInt16(Console.ReadLine());
+                switch (op)
+                {
+                    case 0: 
+                        msg = c.ligar();
+                        Console.WriteLine(msg);
+                        break;
+                    case 1: 
+                        msg = c.desligar();
+                        Console.WriteLine(msg);
+                        break;
+                    case 2: 
+                        msg = c.enviarMensagem();
+                        Console.WriteLine(msg);
+                        break;
+                    case 3: 
+                        msg = c.fazerLigacao();
+                        Console.WriteLine(msg); 
+                        break;
+                    case 4: teste = false; break;
+                    default: Console.WriteLine("Opção inválida"); break;
+            }
         }
     }
+}
 }
