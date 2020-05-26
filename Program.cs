@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace primeiroProjetoPOO
@@ -16,11 +17,15 @@ namespace primeiroProjetoPOO
             Celular c = new Celular();
             c.modelo = "Samsung Galaxy S10";
             c.cor = "Preto";
-            Console.WriteLine("_______________");
-            Console.WriteLine(c.cor);
-            Console.WriteLine(c.tamanho);
-            Console.WriteLine(c.modelo);
-            Console.WriteLine("_______________");
+            c.tamanho = 10.5f;
+
+            Console.WriteLine("--------- Celular");
+            Console.WriteLine("Modelo: "+c.modelo);
+            Console.WriteLine("Cor: "+c.cor);
+            Console.WriteLine("Tamanho: "+c.tamanho);
+            Console.WriteLine("----------------");
+            Thread.Sleep(1000);
+            Console.Clear();
             while(teste == true){
                 Console.WriteLine("--------- MENU");
                 Console.WriteLine("0 - Ligar o Celular");
@@ -28,6 +33,7 @@ namespace primeiroProjetoPOO
                 Console.WriteLine("2 - Enviar mensagem");
                 Console.WriteLine("3 - Realizar ligação");
                 Console.WriteLine("4 - Sair");
+                Console.WriteLine("---------------");
                 op = Convert.ToInt16(Console.ReadLine());
                 switch (op)
                 {
@@ -51,6 +57,10 @@ namespace primeiroProjetoPOO
                     default: Console.WriteLine("Opção inválida"); break;
             }
         }
+        Console.WriteLine("Saindo...");
+        Thread.Sleep(2000);
+        Console.Clear();
+        System.Environment.Exit(0);
     }
 }
 }
